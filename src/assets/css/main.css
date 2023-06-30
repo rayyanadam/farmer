@@ -1,0 +1,39 @@
+div.input label{
+  font-size: medium;padding: 0px;margin: 0px;line-height: 1px;
+  padding: 12px 12px 12px 0;border-radius: 4px;
+}
+
+div.input input, select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+div.input input[type=radio]{display: inline;width: 50%;border: 2px solid red;}
+
+div.input input:focus {
+  border: 3px solid #555;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+fieldset legend
+{
+  font-size: small;font-weight: bold;
+  border-bottom: 1px solid#106043;
+}
+ .modal_new {
+   width:90%
+   margin:30px 0 0 25px;
+ }
+
