@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
   users: any[] = [];
   router: any;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, router: Router) {}
 
    //--------------------insert user---------------------
    saveUser(): void {
@@ -38,7 +38,22 @@ export class ProfileComponent {
     (document.getElementById('userPhoneNumber') as HTMLInputElement).value = '';
     (document.getElementById('userPassword') as HTMLInputElement).value = '';
     (document.getElementById('userAddress') as HTMLInputElement).value = '';
-    document.getElementById('insert-crops')?.classList.remove('show');// Close the modal
+    document.getElementById('profile')?.classList.remove('show');// Close the modal
+  }
+
+  //get profile
+  ngOnInit(): void {
+    this.getProfile();
+  }
+  getProfile(): void {
+    this.http.get<any>('http://localhost:3000/api/v1/users').subscribe(
+      (response) => {
+        this.users = response.users;
+      },
+      (error) => {
+        console.error('Error retrieving user data:', error);
+      }
+    );
   }
 
 }

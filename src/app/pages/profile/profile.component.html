@@ -1,8 +1,16 @@
-<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#edit-profile">Edit Profile</button>
+<!-- <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#edit-profile">Edit Profile</button> -->
 <div class="card">
   <div class="card-body">
-    <table class="table datatable">
+    <table class="table datatable" id="profile">
       <tbody>
+        <!-- <tr *ngFor="let user of users">
+          <td>{{ user.fname }}{{user.lname}}</td>
+          <td>{{ user.address}}</td>
+          <td>{{ user.phone_number}}</td>
+          <td>{{ user.email}}</td>
+          <td>{{ user.phone_number}}</td>
+          <td>
+        </tr> -->
         <tr>
           <td>Name:</td>
           <td>Raiyan Adam Salim</td>
@@ -49,17 +57,11 @@
           <div class="col-6">
               <input type="text" class="form-control" placeholder="Address">
           </div>
-          <div class="col-md-6">
-            <input type="password" class="form-control" placeholder="Password">
-          </div>
-          <div class="col-md-6">
-            <input type="password" class="form-control" placeholder="Confirm Password">
-          </div>
       </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>

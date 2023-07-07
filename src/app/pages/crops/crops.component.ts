@@ -29,7 +29,7 @@ export class CropsComponent implements OnInit {
   
     this.http.post<any>('http://localhost:3000/api/v1/crops', payload).subscribe(
       (response) => {
-        this.router.navigateByUrl('/crops')
+        this.router.navigate(['/crops']);
       },
       (error) => {
         // console.error('Error saving crop:', error);
@@ -98,9 +98,10 @@ export class CropsComponent implements OnInit {
       }
     );
   }
+  
   //update
   updateCrop(): void {
-    const cropId = 2; // Replace with the actual crop ID
+    const cropId = this.selectedCropId; // Use the selected crop ID variable
     const name = (document.getElementById('cropName') as HTMLInputElement).value;
     const quantity = (document.getElementById('cropQuantity') as HTMLInputElement).value;
     const price = (document.getElementById('cropPrice') as HTMLInputElement).value;
@@ -119,6 +120,7 @@ export class CropsComponent implements OnInit {
       }
     );
   }
+  
 
 
   //-----------------------delete crop---------------------
@@ -136,9 +138,10 @@ export class CropsComponent implements OnInit {
   
       this.http.delete<any>(`http://localhost:3000/api/v1/crops/${cropId}`).subscribe(
         (response) => {
-          console.log('Crop data deleted successfully:', response);
+          // console.log('Crop data deleted successfully:', response);
           // Close the delete modal
           document.getElementById('delete-crops')?.classList.remove('show');
+          this.router.navigate(['/crops']);
         },
         (error) => {
           console.error('Error deleting crop data:', error);
@@ -146,9 +149,6 @@ export class CropsComponent implements OnInit {
       );
     }
   }
-
- 
-  
 
 }
 

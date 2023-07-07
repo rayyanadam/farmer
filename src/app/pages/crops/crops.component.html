@@ -19,7 +19,7 @@
           <td>{{ crop.price }}</td>
           <td>
             <button type="button" class="btn btn-outline-success mx-3" data-bs-toggle="modal" data-bs-target="#description-crops" (click)="openModal(crop.id)">Description</button>
-            <button type="button" class="btn btn-outline-primary mx-3" data-bs-toggle="modal" data-bs-target="#edit-crops" (click)="openEditModal(crop.id)">Edit</button> 
+            <!-- <button type="button" class="btn btn-outline-primary mx-3" data-bs-toggle="modal" data-bs-target="#edit-crops" (click)="openEditModal(crop.id)">Edit</button>  -->
             <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#delete-crops" (click)="openDeleteModal(crop.id)">Delete</button> 
           </td>
         </tr>
@@ -54,7 +54,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="saveCrop()">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="saveCrop()">Save</button>
       </div>
     </div>
   </div>
@@ -110,7 +110,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="updateCrop()">Save changes</button>
+        <button type="button" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
@@ -129,7 +129,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="deleteCrop()">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="deleteCrop()">Delete</button>
       </div>
     </div>
   </div>
